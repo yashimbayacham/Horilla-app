@@ -109,4 +109,3 @@ whitenoise==6.6.0
 Whoosh==2.7.4
 xhtml2pdf==0.2.8
 xlsxwriter==3.2.0
-gunicorn==21.2.0
