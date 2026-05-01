@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Running migrations..."
+echo "Applying migrations..."
 python manage.py migrate --noinput
 
 echo "Collecting static files..."
