@@ -1,16 +1,17 @@
 #!/usr/bin/env bash
-
 set -o errexit
+
+echo "Making migrations..."
+python manage.py makemigrations
 
 echo "Applying migrations..."
 python manage.py migrate --noinput
 
 echo "Creating superuser if not exists..."
 python manage.py shell <<EOF
-import os
 from django.contrib.auth import get_user_model
-
 User = get_user_model()
+import os
 
 username = os.environ.get("DJANGO_SUPERUSER_USERNAME")
 email = os.environ.get("DJANGO_SUPERUSER_EMAIL")
