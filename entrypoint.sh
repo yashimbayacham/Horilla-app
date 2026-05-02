@@ -22,7 +22,7 @@ if username and not User.objects.filter(username=username).exists():
 EOF
 
 echo "Collecting static files..."
-python manage.py collectstatic --noinput
+python manage.py collectstatic --noinput || true
 
 echo "Starting server..."
 exec gunicorn horilla.wsgi:application --bind 0.0.0.0:$PORT
